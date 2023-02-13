@@ -1,8 +1,9 @@
 # from django.db import models
-from django.contrib.auth.models import AbstractUser
-
+from django.contrib.auth.models import AbstractUser, BaseUserManager
+from django.db import models
 
 class User(AbstractUser):
+    is_student = models.BooleanField('student status', default=False)
     pass
     '''
     This is a custom version of the built in User class
