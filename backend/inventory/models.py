@@ -11,7 +11,7 @@ class Inventory(models.Model):
     make = models.CharField(max_length=30)
     model = models.CharField(max_length=100)
     year = models.IntegerField()
-    image = models.ImageField(upload_to='inventory_images', blank=True)
+    images = models.FileField(upload_to='inventory_images', blank=True)
     description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     owner = models.CharField(max_length=100, blank=True)
