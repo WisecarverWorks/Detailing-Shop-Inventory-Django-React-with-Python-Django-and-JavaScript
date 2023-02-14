@@ -7,5 +7,5 @@ from .models import Car
 class CarSerializer(serializers.ModelSerializer):
     class Meta:
         model = Car
-        fields = ['id', 'make', 'model', 'year', 'user_id', 'image', 'image.choices']
+        fields = ['id', 'make', 'user_id', 'image', 'image_url']
         depth = 1
