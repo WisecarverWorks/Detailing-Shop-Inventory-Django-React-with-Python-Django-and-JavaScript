@@ -10,15 +10,15 @@ from .serializers import InventorySerializer
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
-def get_all_Inventory(request):
-    Inventory = Inventory.objects.all()
+def get_all_inventory(request):
+    inventory = inventory.objects.all()
     serializer = InventorySerializer(Inventory, many=True)
     return Response(serializer.data)
 
 
 @api_view(['GET', 'POST'])
-@permission_classes([IsAuthenticated])
-def user_Inventory(request):
+@permission_classes([AllowAny])
+def user_inventory(request):
     print(
         'User ', f"{request.user.id} {request.user.email} {request.user.username}")
     if request.method == 'POST':
