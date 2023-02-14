@@ -8,7 +8,7 @@ from .serializers import CarSerializer
 # <<<<<<<<<<<<<<<<< EXAMPLE FOR STARTER CODE USE <<<<<<<<<<<<<<<<<
 
 
-@api_view(['GET'])
+@api_view(['GET', 'POST'])
 @permission_classes([AllowAny])
 def get_all_cars(request):
     cars = Car.objects.all()
@@ -17,7 +17,7 @@ def get_all_cars(request):
 
 
 @api_view(['GET', 'POST'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def user_cars(request):
     print(
         'User ', f"{request.user.id} {request.user.email} {request.user.username}")
