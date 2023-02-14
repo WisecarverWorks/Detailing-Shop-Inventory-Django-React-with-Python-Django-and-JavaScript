@@ -9,6 +9,6 @@ from authentication.models import User
 class Car(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     make = models.CharField(max_length=30)
-    image = models.URLField(max_length=200)
-    image.choices = models.FileField(upload_to='images/')
+    image = models.ImageField(upload_to='images/', max_length=200, blank=True)
+    image_url = models.URLField( blank=True)
     
